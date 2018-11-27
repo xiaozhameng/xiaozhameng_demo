@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaozhameng.web.dao.AsyncTaskRecordsMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhameng.web.entity.AsyncTaskRecords">
+    <result column="TASK_RULE_NAME" jdbcType="VARCHAR" property="taskRuleName" />
+    <result column="TASK_EXECUTE_COUNT" jdbcType="VARCHAR" property="taskExecuteCount" />
+    <result column="TASK_NEXT_EXE_TIME" jdbcType="VARCHAR" property="taskNextExeTime" />
+    <result column="TASK_EXECUTE_STATE" jdbcType="VARCHAR" property="taskExecuteState" />
+    <result column="MSG_COMMUNICATE_CODE" jdbcType="VARCHAR" property="msgCommunicateCode" />
+    <result column="MSG_SERIAL_NO" jdbcType="VARCHAR" property="msgSerialNo" />
+    <result column="MSG_BANK_ORDER_NO" jdbcType="VARCHAR" property="msgBankOrderNo" />
+    <result column="MSG_ORDER_CREATE_TIME" jdbcType="VARCHAR" property="msgOrderCreateTime" />
+  </resultMap>
+  <insert id="insertSelective" parameterType="com.xiaozhameng.web.entity.AsyncTaskRecords">
+    insert into tbl_async_task_records
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="taskRuleName != null">
+        TASK_RULE_NAME,
+      </if>
+      <if test="taskExecuteCount != null">
+        TASK_EXECUTE_COUNT,
+      </if>
+      <if test="taskNextExeTime != null">
+        TASK_NEXT_EXE_TIME,
+      </if>
+      <if test="taskExecuteState != null">
+        TASK_EXECUTE_STATE,
+      </if>
+      <if test="msgCommunicateCode != null">
+        MSG_COMMUNICATE_CODE,
+      </if>
+      <if test="msgSerialNo != null">
+        MSG_SERIAL_NO,
+      </if>
+      <if test="msgBankOrderNo != null">
+        MSG_BANK_ORDER_NO,
+      </if>
+      <if test="msgOrderCreateTime != null">
+        MSG_ORDER_CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="taskRuleName != null">
+        #{taskRuleName,jdbcType=VARCHAR},
+      </if>
+      <if test="taskExecuteCount != null">
+        #{taskExecuteCount,jdbcType=VARCHAR},
+      </if>
+      <if test="taskNextExeTime != null">
+        #{taskNextExeTime,jdbcType=VARCHAR},
+      </if>
+      <if test="taskExecuteState != null">
+        #{taskExecuteState,jdbcType=VARCHAR},
+      </if>
+      <if test="msgCommunicateCode != null">
+        #{msgCommunicateCode,jdbcType=VARCHAR},
+      </if>
+      <if test="msgSerialNo != null">
+        #{msgSerialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="msgBankOrderNo != null">
+        #{msgBankOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="msgOrderCreateTime != null">
+        #{msgOrderCreateTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <sql id="sql_where">
+    <where>
+      <if test="taskRuleName != null">
+         and TASK_RULE_NAME = #{taskRuleName,jdbcType=VARCHAR}
+      </if>
+      <if test="taskExecuteCount != null">
+         and TASK_EXECUTE_COUNT = #{taskExecuteCount,jdbcType=VARCHAR}
+      </if>
+      <if test="taskNextExeTime != null">
+         and TASK_NEXT_EXE_TIME = #{taskNextExeTime,jdbcType=VARCHAR}
+      </if>
+      <if test="taskExecuteState != null">
+         and TASK_EXECUTE_STATE = #{taskExecuteState,jdbcType=VARCHAR}
+      </if>
+      <if test="msgCommunicateCode != null">
+         and MSG_COMMUNICATE_CODE = #{msgCommunicateCode,jdbcType=VARCHAR}
+      </if>
+      <if test="msgSerialNo != null">
+         and MSG_SERIAL_NO = #{msgSerialNo,jdbcType=VARCHAR}
+      </if>
+      <if test="msgBankOrderNo != null">
+         and MSG_BANK_ORDER_NO = #{msgBankOrderNo,jdbcType=VARCHAR}
+      </if>
+      <if test="msgOrderCreateTime != null">
+         and MSG_ORDER_CREATE_TIME = #{msgOrderCreateTime,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.xiaozhameng.web.entity.AsyncTaskRecords" resultMap="BaseResultMap">
+     select * from tbl_async_task_records
+    <include refid="sql_where" />
+  </select>
+</mapper>

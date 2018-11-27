@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaozhameng.web.dao.PayerBankOrderEntityMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhameng.web.entity.PayerBankOrderEntity">
+    <result column="ID" jdbcType="BIGINT" property="id" />
+    <result column="PAYER_ORDER_NO" jdbcType="VARCHAR" property="payerOrderNo" />
+    <result column="PAYEE_ORDER_NO" jdbcType="VARCHAR" property="payeeOrderNo" />
+    <result column="TRADE_SERIAL_NO" jdbcType="VARCHAR" property="tradeSerialNo" />
+    <result column="ROUTER_INTERFACE_CODE" jdbcType="VARCHAR" property="routerInterfaceCode" />
+    <result column="PAY_INTERFACE" jdbcType="VARCHAR" property="payInterface" />
+    <result column="PAY_WAY" jdbcType="VARCHAR" property="payWay" />
+    <result column="ORDER_AMOUNT" jdbcType="DECIMAL" property="orderAmount" />
+    <result column="PAY_AMOUNT" jdbcType="DECIMAL" property="payAmount" />
+    <result column="CARD_TYPE" jdbcType="VARCHAR" property="cardType" />
+    <result column="BANK_CODE" jdbcType="VARCHAR" property="bankCode" />
+    <result column="TRANSACTION_NO" jdbcType="VARCHAR" property="transactionNo" />
+    <result column="VOUCHER_NO" jdbcType="VARCHAR" property="voucherNo" />
+    <result column="ORDER_STATUS" jdbcType="VARCHAR" property="orderStatus" />
+    <result column="YEEPAY_MERCHANT_NO" jdbcType="VARCHAR" property="yeepayMerchantNo" />
+    <result column="YEEPAY_MERCHANT_NAME" jdbcType="VARCHAR" property="yeepayMerchantName" />
+    <result column="DRIVER_TYPE" jdbcType="VARCHAR" property="driverType" />
+    <result column="COUPON_INFO" jdbcType="VARCHAR" property="couponInfo" />
+    <result column="PLATFORM" jdbcType="VARCHAR" property="platform" />
+    <result column="RETURN_CODE" jdbcType="VARCHAR" property="returnCode" />
+    <result column="RETURN_MSG" jdbcType="VARCHAR" property="returnMsg" />
+    <result column="BIZ_CODE" jdbcType="VARCHAR" property="bizCode" />
+    <result column="BIZ_MSG" jdbcType="VARCHAR" property="bizMsg" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="PAY_SUCCESS_TIME" jdbcType="TIMESTAMP" property="paySuccessTime" />
+    <result column="BANK_SUCCESS_TIME" jdbcType="TIMESTAMP" property="bankSuccessTime" />
+    <result column="LAST_MODIFY_TIME" jdbcType="TIMESTAMP" property="lastModifyTime" />
+  </resultMap>
+  <insert id="insertSelective" parameterType="com.xiaozhameng.web.entity.PayerBankOrderEntity">
+    insert into tbl_payer_bank_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="payerOrderNo != null">
+        PAYER_ORDER_NO,
+      </if>
+      <if test="payeeOrderNo != null">
+        PAYEE_ORDER_NO,
+      </if>
+      <if test="tradeSerialNo != null">
+        TRADE_SERIAL_NO,
+      </if>
+      <if test="routerInterfaceCode != null">
+        ROUTER_INTERFACE_CODE,
+      </if>
+      <if test="payInterface != null">
+        PAY_INTERFACE,
+      </if>
+      <if test="payWay != null">
+        PAY_WAY,
+      </if>
+      <if test="orderAmount != null">
+        ORDER_AMOUNT,
+      </if>
+      <if test="payAmount != null">
+        PAY_AMOUNT,
+      </if>
+      <if test="cardType != null">
+        CARD_TYPE,
+      </if>
+      <if test="bankCode != null">
+        BANK_CODE,
+      </if>
+      <if test="transactionNo != null">
+        TRANSACTION_NO,
+      </if>
+      <if test="voucherNo != null">
+        VOUCHER_NO,
+      </if>
+      <if test="orderStatus != null">
+        ORDER_STATUS,
+      </if>
+      <if test="yeepayMerchantNo != null">
+        YEEPAY_MERCHANT_NO,
+      </if>
+      <if test="yeepayMerchantName != null">
+        YEEPAY_MERCHANT_NAME,
+      </if>
+      <if test="driverType != null">
+        DRIVER_TYPE,
+      </if>
+      <if test="couponInfo != null">
+        COUPON_INFO,
+      </if>
+      <if test="platform != null">
+        PLATFORM,
+      </if>
+      <if test="returnCode != null">
+        RETURN_CODE,
+      </if>
+      <if test="returnMsg != null">
+        RETURN_MSG,
+      </if>
+      <if test="bizCode != null">
+        BIZ_CODE,
+      </if>
+      <if test="bizMsg != null">
+        BIZ_MSG,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="paySuccessTime != null">
+        PAY_SUCCESS_TIME,
+      </if>
+      <if test="bankSuccessTime != null">
+        BANK_SUCCESS_TIME,
+      </if>
+      <if test="lastModifyTime != null">
+        LAST_MODIFY_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="payerOrderNo != null">
+        #{payerOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="payeeOrderNo != null">
+        #{payeeOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeSerialNo != null">
+        #{tradeSerialNo,jdbcType=VARCHAR},
+      </if>
+      <if test="routerInterfaceCode != null">
+        #{routerInterfaceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="payInterface != null">
+        #{payInterface,jdbcType=VARCHAR},
+      </if>
+      <if test="payWay != null">
+        #{payWay,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAmount != null">
+        #{orderAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="payAmount != null">
+        #{payAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="cardType != null">
+        #{cardType,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCode != null">
+        #{bankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionNo != null">
+        #{transactionNo,jdbcType=VARCHAR},
+      </if>
+      <if test="voucherNo != null">
+        #{voucherNo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="yeepayMerchantNo != null">
+        #{yeepayMerchantNo,jdbcType=VARCHAR},
+      </if>
+      <if test="yeepayMerchantName != null">
+        #{yeepayMerchantName,jdbcType=VARCHAR},
+      </if>
+      <if test="driverType != null">
+        #{driverType,jdbcType=VARCHAR},
+      </if>
+      <if test="couponInfo != null">
+        #{couponInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="platform != null">
+        #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="returnCode != null">
+        #{returnCode,jdbcType=VARCHAR},
+      </if>
+      <if test="returnMsg != null">
+        #{returnMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="bizCode != null">
+        #{bizCode,jdbcType=VARCHAR},
+      </if>
+      <if test="bizMsg != null">
+        #{bizMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paySuccessTime != null">
+        #{paySuccessTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bankSuccessTime != null">
+        #{bankSuccessTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyTime != null">
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <sql id="sql_where">
+    <where>
+      <if test="id != null">
+         and ID = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="payerOrderNo != null">
+         and PAYER_ORDER_NO = #{payerOrderNo,jdbcType=VARCHAR}
+      </if>
+      <if test="payeeOrderNo != null">
+         and PAYEE_ORDER_NO = #{payeeOrderNo,jdbcType=VARCHAR}
+      </if>
+      <if test="tradeSerialNo != null">
+         and TRADE_SERIAL_NO = #{tradeSerialNo,jdbcType=VARCHAR}
+      </if>
+      <if test="routerInterfaceCode != null">
+         and ROUTER_INTERFACE_CODE = #{routerInterfaceCode,jdbcType=VARCHAR}
+      </if>
+      <if test="payInterface != null">
+         and PAY_INTERFACE = #{payInterface,jdbcType=VARCHAR}
+      </if>
+      <if test="payWay != null">
+         and PAY_WAY = #{payWay,jdbcType=VARCHAR}
+      </if>
+      <if test="orderAmount != null">
+         and ORDER_AMOUNT = #{orderAmount,jdbcType=DECIMAL}
+      </if>
+      <if test="payAmount != null">
+         and PAY_AMOUNT = #{payAmount,jdbcType=DECIMAL}
+      </if>
+      <if test="cardType != null">
+         and CARD_TYPE = #{cardType,jdbcType=VARCHAR}
+      </if>
+      <if test="bankCode != null">
+         and BANK_CODE = #{bankCode,jdbcType=VARCHAR}
+      </if>
+      <if test="transactionNo != null">
+         and TRANSACTION_NO = #{transactionNo,jdbcType=VARCHAR}
+      </if>
+      <if test="voucherNo != null">
+         and VOUCHER_NO = #{voucherNo,jdbcType=VARCHAR}
+      </if>
+      <if test="orderStatus != null">
+         and ORDER_STATUS = #{orderStatus,jdbcType=VARCHAR}
+      </if>
+      <if test="yeepayMerchantNo != null">
+         and YEEPAY_MERCHANT_NO = #{yeepayMerchantNo,jdbcType=VARCHAR}
+      </if>
+      <if test="yeepayMerchantName != null">
+         and YEEPAY_MERCHANT_NAME = #{yeepayMerchantName,jdbcType=VARCHAR}
+      </if>
+      <if test="driverType != null">
+         and DRIVER_TYPE = #{driverType,jdbcType=VARCHAR}
+      </if>
+      <if test="couponInfo != null">
+         and COUPON_INFO = #{couponInfo,jdbcType=VARCHAR}
+      </if>
+      <if test="platform != null">
+         and PLATFORM = #{platform,jdbcType=VARCHAR}
+      </if>
+      <if test="returnCode != null">
+         and RETURN_CODE = #{returnCode,jdbcType=VARCHAR}
+      </if>
+      <if test="returnMsg != null">
+         and RETURN_MSG = #{returnMsg,jdbcType=VARCHAR}
+      </if>
+      <if test="bizCode != null">
+         and BIZ_CODE = #{bizCode,jdbcType=VARCHAR}
+      </if>
+      <if test="bizMsg != null">
+         and BIZ_MSG = #{bizMsg,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null">
+         and CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="paySuccessTime != null">
+         and PAY_SUCCESS_TIME = #{paySuccessTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="bankSuccessTime != null">
+         and BANK_SUCCESS_TIME = #{bankSuccessTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="lastModifyTime != null">
+         and LAST_MODIFY_TIME = #{lastModifyTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+  </sql>
+  <select id="getList" parameterType="com.xiaozhameng.web.entity.PayerBankOrderEntity" resultMap="BaseResultMap">
+     select * from tbl_payer_bank_order
+    <include refid="sql_where" />
+  </select>
+</mapper>
