@@ -1,5 +1,7 @@
 package com.xiaozhameng;
 
+import java.util.Arrays;
+
 /**
  * 测试辅助工具类
  */
@@ -10,15 +12,8 @@ public class TestUtil {
      * @param dataList
      * @return
      */
-    public String printArray(Integer[] dataList){
-        if (dataList == null || dataList.length <1){
-            return null;
-        }
-        StringBuffer buffer = new StringBuffer();
-        for (Integer data: dataList){
-            buffer.append(data).append(",");
-        }
-        return buffer.toString().substring(0,buffer.toString().length()-1);
+    public String printArray(int[] dataList){
+        return Arrays.toString(dataList);
     }
 
 

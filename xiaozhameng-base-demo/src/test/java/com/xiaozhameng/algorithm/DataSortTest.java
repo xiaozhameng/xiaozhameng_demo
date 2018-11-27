@@ -10,7 +10,7 @@ import java.util.Random;
  */
 public class DataSortTest extends TestUtil {
 
-    public static Integer[] dataList = new Integer[10];
+    public static int[] dataList = new int[10];
     static {
         int from = 11;
         int end = 100;
