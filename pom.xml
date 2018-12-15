@@ -17,6 +17,7 @@
         <module>xiaozhameng-design-pattern-demo</module>
         <module>xiaozhameng-base-demo</module>
         <module>xiaozhameng-spring-boot-demo</module>
+        <module>xiaozhameng-test</module>
     </modules>
     <packaging>pom</packaging>
 
