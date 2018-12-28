@@ -1,4 +1,4 @@
-package xiaozhameng.file;
+package xiaozhameng.javabase.file;
 
 import org.junit.Test;
 import org.slf4j.Logger;

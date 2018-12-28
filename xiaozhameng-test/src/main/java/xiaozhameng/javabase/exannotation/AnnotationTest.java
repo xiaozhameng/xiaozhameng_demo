@@ -1,4 +1,4 @@
-package xiaozhameng.exannotation;
+package xiaozhameng.javabase.exannotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

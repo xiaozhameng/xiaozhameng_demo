@@ -1,7 +1,6 @@
 package xiaozhameng.algorithm.sort;
-
-import com.xiaozhameng.TestUtil;
 import org.junit.Test;
+import xiaozhameng.TestUtil;
 
 /**
  * 排序算法测试

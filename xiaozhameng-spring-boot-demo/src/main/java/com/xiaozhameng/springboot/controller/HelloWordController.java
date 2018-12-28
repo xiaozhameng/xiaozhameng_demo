@@ -4,11 +4,14 @@ import com.google.common.base.Objects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -24,6 +27,20 @@ import java.util.concurrent.TimeUnit;
 public class HelloWordController {
 
     private static final Logger logger = LoggerFactory.getLogger(HelloWordController.class);
+
+
+    @RequestMapping("/redirectTest")
+    @ResponseBody
+    public void redirectTest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+        // 重定向
+        String redirectUrl = "https://bankgw.yeepay.com/bankgw/open/UNION_NET_OPEN_YLSJ6062_XIAOZHAMENG_BANKGW_server.action";
+        String redirectResultURL = "https://qr.95516.com/qrcGtwWeb-web/api/userAuth?version=1.0.0&redirectUrl=" + redirectUrl;
+        try {
+            httpServletResponse.sendRedirect(redirectResultURL);
+        }catch (Exception e){
+            logger.error("……测试出错了……",e);
+        }
+    }
 
     @RequestMapping("/sayHello")
     @ResponseBody

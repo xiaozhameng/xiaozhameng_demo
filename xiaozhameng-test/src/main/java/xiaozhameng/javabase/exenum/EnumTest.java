@@ -1,4 +1,4 @@
-package xiaozhameng.exenum;
+package xiaozhameng.javabase.exenum;
 
 import org.junit.Test;
 
@@ -17,14 +17,7 @@ public class EnumTest {
      */
     @Test
     public void testEnum(){
-
-    }
-
-    /**
-     * 内部测试枚举类
-     */
-    enum Explore{
-        HERE,THERE
+        System.out.println(Status.SUCCESS.getMessage());
     }
 
 }

@@ -2,10 +2,7 @@ package xiaozhameng.other;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class OtherTest {
 
@@ -25,6 +22,25 @@ public class OtherTest {
         Error error = new Error("错误");
         Map<String,String> hashMap = new HashMap<String,String>();
         Collection<String> collection = new ArrayList<String>();
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("hello");
+
+        Integer a = 1000, b = 1000;
+        System.out.println(a == b);//1
+        Integer c = 100, d = 100;
+        System.out.println(c == d);//2
+
+        int aa = 1000, bb = 1000;
+        System.out.println(aa == bb);//1
+        int cc = 100, dd = 100;
+        System.out.println(cc == dd);//2
+    }
+
+    @Test
+    public void testDataTypeJava(){
+        byte bd = "a".getBytes()[0];
+        System.out.println("a".getBytes().length);
+        System.out.println(bd);
     }
 
     @Test

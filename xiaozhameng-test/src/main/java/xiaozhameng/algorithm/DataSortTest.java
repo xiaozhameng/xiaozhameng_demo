@@ -1,7 +1,8 @@
 package xiaozhameng.algorithm;
 
-import com.xiaozhameng.TestUtil;
+
 import org.junit.Test;
+import xiaozhameng.TestUtil;
 
 import java.util.Random;
 

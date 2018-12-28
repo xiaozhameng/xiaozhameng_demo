@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class HeapOOM {
     static class OOMObject{
-
+        private byte[] data = new byte[500];
     }
     public static void main(String[] args) {
         // list 引用保证GC Roots 到对象之间有可达路径
